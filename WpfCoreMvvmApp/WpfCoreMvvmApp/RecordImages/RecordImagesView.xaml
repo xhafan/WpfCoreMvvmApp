@@ -11,17 +11,34 @@
     >
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBlock 
             Grid.Row="0"
             Text="Record images view" 
             />
-        <Button 
+        <TextBlock 
             Grid.Row="1"
+            Text="{Binding ImageNumber}"
+        />
+        <TextBlock 
+            Grid.Row="2"
+            Text="{Binding Status}"
+        />
+        <Button 
+            Grid.Row="4"
             Content="Goto settings" 
             Command="{Binding GotoSettingsCommand}"
+            />
+        <Button 
+            Grid.Row="5"
+            Content="Save images" 
+            Command="{Binding SaveImagesCommand}"
             />
     </Grid>
 </UserControl>

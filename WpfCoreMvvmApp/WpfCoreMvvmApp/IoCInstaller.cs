@@ -2,6 +2,7 @@
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using CoreMvvm;
+using WpfCoreMvvmApp.Services;
 
 namespace WpfCoreMvvmApp
 {
@@ -14,6 +15,11 @@ namespace WpfCoreMvvmApp
                        .BasedOn<BaseViewModel>()
                        .Configure(x => x.LifestyleTransient())
                 );
+            container.Register(
+                Component.For<IRecordImagesService>()
+                         .ImplementedBy<RecordImagesService>()
+                         .LifestyleSingleton()
+                         );
         }
     }
 }
